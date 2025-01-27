@@ -1,0 +1,47 @@
+\usepackage{changepage, amsmath, amssymb, pgfplots, tikz, xcolor, chemfig, mhchem,tabularx,graphicx} % Hier werden alle packages geladen, die ich in diesem Dokument benutze. Ich definiere Farben und Befehle, die ich häufig verwende.
+\usepackage{darkmode} % Dieses package wird nicht benutzt. Aber mit \enabledarkmode kann man die Papierfarbe auf schwarz, und die Schriftfarben und weiß invertieren.
+\usepackage{fullpage} % Mit diesem Package wird die ganze Seite genutzt. 
+\pgfplotsset{compat=1.18} 
+\usetikzlibrary{3d, calc,angles,decorations.markings,quotes} 
+\definecolor{jade}{HTML}{00A36C} % Grün
+\definecolor{crimson}{HTML}{DC143C} % Rot
+\definecolor{pinke}{HTML}{FF1493} % Pink
+\definecolor{blaue}{HTML}{0000CD} % Blau
+\definecolor{graue}{HTML}{c3cbc4} % Grau, selbsterklärend, schätze ich
+\newcommand{\dreid}[7]{\begin{tikzpicture}
+    \begin{axis}[
+        xlabel={$#1$}, ylabel={$#2$},
+        minor tick num=0,
+        xmin=#3, xmax=#4, ymin=#5, ymax=#6,
+        samples=100,
+        axis y line=center, axis x line=middle,
+        ]
+        #7;
+    \end{axis}
+\end{tikzpicture}} % Für Graphen.
+\usepackage[most]{tcolorbox}
+\newtcolorbox{qq}[2][]{%
+    lower separated=false,
+    enhanced,
+	boxrule=0.75pt,
+	sharp corners,  % Square edges
+	colframe=black,  % Set the color of the outline
+	colback=white,  % Set the color of the fill
+	coltext=black,
+    top=0pt,
+	#1,
+    breakable,
+} % Definiert die Boxen, die ich verwende
+\usepackage{float} % Damit ich bilder einfügen kann
+\newcommand{\bei}[2]{\textcolor{crimson}{\text{#1}}\text{ bei }\textcolor{crimson}{#2}} 
+\newcommand{\boxx}[2]{\subsubsection{\jade{#1}}\begin{qq}{1cm}#2\end{qq}} % Definiert die Boxen, die ich verwende
+\newcommand{\crimson}[1]{\textcolor{crimson}{#1}}
+\newcommand{\jade}[1]{\textcolor{jade}{#1}}
+\newcommand{\blaue}[1]{\textcolor{blaue}{#1}}
+\newcommand{\boxxx}[1]{\begin{qq}{1cm}#1\end{qq}}
+\newcommand{\boxxline}{\noindent\rule{\textwidth}{0.4pt}}
+\usepgfplotslibrary{fillbetween}
+\usepackage[hidelinks]{hyperref}
+\renewcommand{\contentsname}{Inhaltsverzeichnis}
+\newcommand{\minipagee}[2]{\begin{minipage}{#1\textwidth}#2\end{minipage}}
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}

@@ -1,0 +1,805 @@
+\section{Analysis}
+
+\subsection{Grundlagen}
+
+\boxx{Transformation von Funktionen}{
+\vspace{-\baselineskip}
+\begin{gather*}
+    f(x)=\textcolor{blaue}{a}\cdot f(\c(x-\crimson{b}))+\jade{d}\\
+    f(x)=\a\cdot e^{\c(x-\b)}+\d
+\end{gather*}
+\begin{center}
+    \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
+        & \(\a\) & \(\c\) & \(\b\) & \(\d\)\\
+        \hline
+        \(>0\) & \(y\)-Werte \(\a\)-fache Größe, Streckung \(\a > 1\), Stauchung \(0 < \a < 1\) & Stauchung in \(x\)-Richtung (\(\c > 1\)) & Verschiebung in \(x\)-Richtung nach rechts & Verschiebung in \(y\)-Richtung nach oben \\
+        \hline
+        \(<0\) & \(y\)-Werte \(\a\)-fache Größe und an \(x\)-Achse gespiegelt & Streckung in \(x\)-Richtung (\(0 < \c < 1\)) und Spiegelung an der \(y\)-Achse, falls \(\c < 0\) & Verschiebung in \(x\)-Richtung nach links & Verschiebung in \(y\)-Richtung nach unten \\
+    \end{tabularx}
+\end{center}
+}
+
+\boxx{Nullstellen}{
+\begin{equation*}
+    f(x)=0
+\end{equation*}
+}
+
+\boxx{pq-Formel}{
+\begin{align*}
+    \a x^2+\b x+\c&=0\\
+    x_{1/2}&=-\frac{\p}{2}\pm\sqrt{\left(\frac{\p}{2}\right)^2-\q}
+\end{align*}
+}
+
+\boxx{Ausklammern}{
+\begin{align*}
+    x^4+3x^3&=0\\
+    x^3(x+3&)=0\\
+    x_1^3&=0\,\land\,x_2+3=0
+\end{align*}
+}
+
+\boxx{Substitution}{
+\begin{align*}
+    x^4-5x^2-36&=0\\
+    y^2-5y-36&=0\\
+\end{align*}
+
+\begin{align*}
+    u_1&=9\Rightarrow x^2=9\quad\,\,\,\iff x_1=3\,\land\,x_2=-3\\
+    u_2&=-4\Rightarrow x^2=-4\iff x_3=\sqrt{-4}\Rightarrow\text{keine Lösung}
+\end{align*}
+}
+
+\boxx{Symmetrie}{
+\begin{center}
+    \begin{tabular}{c|c}
+        alle Exponenten gerade & alle Exponenten ungerade\\
+        \hline
+        Achsensymmetrie & Punktsymmetrie\\
+        \hline
+        Wenn \(\crimson{f}(-x)=\crimson{f}(x)\) & Wenn \(\jade{f}(-x)=-\jade{f}(x)\)\\
+    \end{tabular}
+\end{center}
+\boxxx{
+\begin{minipage}{0.5\textwidth}
+    \begin{center}
+        \dreid{x}{y}{-2}{2}{-2}{2, domain=-2:2, legend pos=north east,xtick={-1,1},ytick={-1,1}}{
+            \addplot[crimson,thick,samples=100]{x^2};
+            \addlegendentry{$x^2$};
+            \node at (axis cs:1,-1.8) {\crimson{Achsensymmetrisch}}
+            }
+    \end{center}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+    \begin{center}
+        \dreid{x}{y}{-2}{2}{-2}{2, domain=-2:2, legend pos=north east,xtick={-1,1},ytick={-1,1}}{
+            \addplot[jade,thick,samples=100]{x^3};
+            \addlegendentry{$x^3$};
+            \node at (axis cs:1,-1.8) {\jade{Punktsymmetrisch}}
+            }
+    \end{center}
+\end{minipage}
+}
+}
+
+\subsection{Änderungsraten}
+
+\boxx{Tangente}{
+\begin{equation*}
+    \blaue{y}=\crimson{m}x+\jade{b}
+\end{equation*}
+\boxxline
+\begin{align*}
+    f(x)&=\blaue{y}\\
+    f'(x)&=\crimson{m}_x\\
+    \jade{b}&=\blaue{y}-\crimson{m}x
+\end{align*}
+}
+
+\boxx{Änderungsrate}{
+\begin{center}
+    \jade{Mittlere Änderungsrate}
+\end{center}
+\begin{equation*}
+    m=\frac{f(x_2)-f(x_1)}{x_2-x_1}
+\end{equation*}
+\boxxline
+\begin{center}
+    \jade{Momentane Änderungsrate}
+\end{center}
+\begin{center}
+    Steigung an einem bestimmten Punkt der Funktion
+\end{center}
+}
+
+\subsection{Ableitungen}
+
+\boxx{Ableitungsregeln}{
+\begin{center}
+    \begin{tabular}{c|c}
+        $f'(x)$ & Steigung von $f(x)$\\
+        \hline
+        $f''(x)$ & Krümmung von $f(x)$\\
+        \hline
+        $f'''(x)$ & Steigung der Krümmung $f(x)$\\
+    \end{tabular}
+\end{center}
+\boxxline
+\begin{center}
+    \begin{tabular}{c|c|c}
+        Potenzregel & $f(x)=x^n$ & $f'(x)=nx^{n-1}$\\
+        \hline
+        Summenregel & $f(x)=g(x)+h(x)$ & $f'(x)=g'(x)+h'(x)$\\
+        \hline
+        Faktorregel & $f(x)=c\cdot g(x)$ & $f'(x)=c\cdot g'(x)$\\
+    \end{tabular}
+\end{center}
+\boxxline
+\begin{equation*}
+    \crimson{u(x)}\cdot\jade{v(x)}=\crimson{u(}\jade{v(x)}\crimson{)}\Rightarrow\text{ Verkettung von } \crimson{u(x)}\text{ und } \jade{v(x)}
+\end{equation*}
+\begin{center}
+    \begin{tabular}{c|c|c}
+        Regel & Funktion $f(x)$ & Ableitung $f'(x)$\\
+        \hline
+        Produktregel & $f(x)=\crimson{u(x)}\cdot \jade{v(x)}$ & $\crimson{u'(x)}\cdot \jade{v(x)}+\crimson{u(x)}\cdot \jade{v'(x)}$\\
+        Kettenregel & $f(x)=\crimson{u(}\jade{v(x)}\crimson{)}$ & $\crimson{u'(}\jade{v(x)}\crimson{)}\cdot \jade{v'(x)}$\\
+    \end{tabular}
+\end{center}
+}
+
+\boxx{Ableitungsfunktion skizzieren}{
+\begin{figure}[H] % Verhindert Gleitverhalten
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/ableitungsfunktionenskizzieren.pdf} % Pfad anpassen
+\end{figure}
+\begin{center}
+    \crimson{negative} Steigung von $f(x)\iff f'(x)$ verläuft unterhalb der x-Achse
+\end{center}
+\begin{center}
+    \jade{positive} Steigung von $f(x)\iff f'(x)$ verläuft überhalb der x-Achse
+\end{center}
+\begin{center}
+    Extrempunkte von $f(x)\iff$ Nullstellen von $f'(x)\dots$
+\end{center}
+}
+
+\subsection{Extremwerte und Wendepunkte}
+
+\begin{minipage}{0.5\textwidth}
+    \boxx{Extremstellen}{
+\begin{equation*}
+    f'(x)=0\Rightarrow\text{pot. Extremstellen}
+\end{equation*}
+\begin{center}
+    \begin{tabular}{c|c|c}
+        $f''(x)>0$ & Minimum & Lcinksgekrümmt\\
+        \hline
+        $f''(x)<0$ & Maximum & Rechtsgekrümmt\\
+    \end{tabular}
+\end{center}
+}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+    \boxx{Wendestellen}{
+\begin{equation*}
+    f''(x)=0\Rightarrow\text{pot. Wendestellen}
+\end{equation*}
+\begin{center}
+    \begin{tabular}{c|c}
+        $f'''(x)=0$ & pot. Sattelpunkt\\
+        \hline
+        $f'''(x)\neq0$ & Wendepunkt\\
+        \hline
+        $f'''(x)>0$ & Rechts-Links Krümmung\\
+        \hline
+        $f'''(x)<0$ & Links-Rechts-Krümmung\\
+    \end{tabular}
+\end{center}
+}
+\end{minipage}
+
+
+\subsection{Ganzrationale Funktionen}
+
+\boxx{Form}{
+\begin{equation*}
+    f(x)=a_nx^n+a_{n-1}x^{n-1}+\dots+a_1x+a_0
+\end{equation*}
+\begin{center}
+    Die höchste Potenz einer Ganzrationalen Funktion gibt ihren Grad, und gleichzeitig die miaxmale Anzahl ihrer Nullstellen an
+\end{center}
+\begin{minipage}{0.33\textwidth}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.5]
+            \begin{axis}[
+                xlabel={$x$}, ylabel={$y$},
+                ticks=none,
+                xmin=-2, xmax=2, ymin=-2, ymax=2,
+                samples=100,
+                axis y line=center, axis x line=middle, domain=-2:2, legend pos=north east,
+                ]
+                \addplot [crimson, thick]{x};
+                \addlegendentry{$x$};
+                \node at (axis cs:1,-1.8) {\crimson{Grad 1}};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{minipage}
+\begin{minipage}{0.33\textwidth}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.5]
+            \begin{axis}[
+                xlabel={$x$}, ylabel={$y$},
+                ticks=none,
+                xmin=-2, xmax=2, ymin=-2, ymax=2,
+                samples=100,
+                axis y line=center, axis x line=middle, domain=-2:2, legend pos=north east,
+                ]
+                \addplot [crimson, thick]{x^2};
+                \addlegendentry{$x^2$};
+                \node at (axis cs:1,-1.8) {\crimson{Grad 2}};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{minipage}
+\begin{minipage}{0.33\textwidth}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.5]
+            \begin{axis}[
+                xlabel={$x$}, ylabel={$y$},
+                ticks=none,
+                xmin=-2, xmax=2, ymin=-2, ymax=2,
+                samples=100,
+                axis y line=center, axis x line=middle, domain=-2:2, legend pos=north east,
+                ]
+                \addplot [crimson, thick]{x^3};
+                \addlegendentry{$x^3$};
+                \node at (axis cs:1,-1.8) {\crimson{Grad 3}};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{minipage}
+
+\vspace{\baselineskip}
+
+\begin{minipage}{0.33\textwidth}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.5]
+            \begin{axis}[
+                xlabel={$x$}, ylabel={$y$},
+                ticks=none,
+                xmin=-2, xmax=2, ymin=-2, ymax=2,
+                samples=100,
+                axis y line=center, axis x line=middle, domain=-2:2, legend pos=north east,
+                ]
+                \addplot [crimson, thick]{x^4};
+                \addlegendentry{$x^4$};
+                \node at (axis cs:1,-1.8) {\crimson{Grad 4}};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{minipage}
+\begin{minipage}{0.33\textwidth}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.5]
+            \begin{axis}[
+                xlabel={$x$}, ylabel={$y$},
+                ticks=none,
+                xmin=-2, xmax=2, ymin=-2, ymax=2,
+                samples=100,
+                axis y line=center, axis x line=middle, domain=-2:2, legend pos=north east,
+                ]
+                \addplot [crimson, thick]{x^5};
+                \addlegendentry{$x^5$};
+                \node at (axis cs:1,-1.8) {\crimson{Grad 5}};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{minipage}
+\begin{minipage}{0.33\textwidth}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.5]
+            \begin{axis}[
+                xlabel={$x$}, ylabel={$y$},
+                ticks=none,
+                xmin=-2, xmax=2, ymin=-2, ymax=2,
+                samples=100,
+                axis y line=center, axis x line=middle, domain=-2:2, legend pos=north east,
+                ]
+                \addplot [crimson, thick]{x^6};
+                \addlegendentry{$x^6$};
+                \node at (axis cs:1,-1.8) {\crimson{Grad 6}};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{minipage}
+\begin{center}
+    $\cdots$
+\end{center}
+}
+
+\boxx{Globalverhalten}{
+    \begin{center}
+        \begin{tabular}{c|c}
+            \textcolor{crimson}{Grad} $n$ & \textcolor{jade}{Globalverhalten}\\
+            \hline
+            $n$ gerade & $x\to\infty=+\infty\,\land\,x\to-\infty=+\infty$\\
+            $n$ ungerade & $x\to\infty=+\infty\,\land\,x\to-\infty=-\infty$\\
+            \hline
+            $n$ gerade und Koeffizient negativ & $x\to\infty=-\infty\,\land\,x\to-\infty=-\infty$\\
+            $n$ ungerade und Koeffizient negativ & $x\to\infty=-\infty\,\land\,x\to-\infty=+\infty$\\
+        \end{tabular}
+    \end{center}
+}
+
+\subsection{Funktionsscharen}
+
+\boxx{Form}{
+\begin{align*}
+    f_k(x)&=k\cdot g(x)\\
+    &\quad\dots
+\end{align*}
+}
+
+\boxx{Ableiten}{
+\begin{center}
+    Der Parameter wird wie eine beliebige Zahl (Konstante) behandelt und dementsprechd abgeleitet
+\end{center}
+\vspace{-\baselineskip}
+\begin{align*}
+    f_k(x)&=x^n+k^2\\
+    f_k'(x)&=nx^{n-1}
+\end{align*}
+}
+
+\boxx{Lösen}{
+\begin{center}
+    Lösungen einer Funktionsschar sind abhängig von dem Parameter, da eine Funktionsschar eine Menge von Funktionen ist. Lösungen mit Parameter geben also alle möglichen Kurven an
+\end{center}
+\vspace{-\baselineskip}
+\begin{align*}
+    f_k'(x)&=x^2-k=0\\
+    x&=\pm\sqrt{k}
+\end{align*}
+}
+
+\boxx{Ortskurve}{
+\begin{center}
+    Die Ortskurve ist die Menge aller Punkte, die durch die Lösungen der Funktionsschar entstehen
+\end{center}
+\begin{itemize}
+    \item Punkt herausfinden EXT$(-2t\vert 16t^3)$
+    \item Parameter elliminieren $x=-2t\Rightarrow t=\dfrac{x}{-2}$
+    \item In Funktionswert einsetzen $y=16t^3\Rightarrow y=16\cdot\left(\dfrac{x}{-2}\right)^2=-2x^3$
+\end{itemize}
+}
+
+
+\subsection{Exponentialfunktion}
+
+\boxx{Form}{
+\def\a{\blaue{a}}
+\begin{equation*}
+    f(x)=c\cdot\a^x \quad\text{mit } \a>0,\,\a\neq1
+\end{equation*}
+\begin{center}
+    \begin{tabular}{c|c}
+        $\a>1$ & exponentielle Zunahme\\
+        \hline
+        $0<\a<1$ & exponentielle Abnahme\\
+    \end{tabular}
+\end{center}
+\begin{center}
+    Keine Nullstellen oberhalb der x-Achse
+\end{center}
+}
+
+\boxx{Globalverhalten}{
+\def\a{\blaue{a}}
+\begin{center}
+    \begin{tabular}{c|c}
+        Basis $\a$ & Globalverhalten\\
+        \hline
+        $\a >1$ & $x\to\infty=+\infty\,\land\,x\to-\infty=0$\\
+        $0< \a <1$ & $x\to\infty=0\,\land\,x\to-\infty=+\infty$\\
+    \end{tabular}
+\end{center}
+}
+
+\boxx{Asymptoten}{
+\begin{center}
+    \begin{tabular}{c|c|c}
+        Funktion $f(x)$ & Asymptote & Verhalten\\
+        \hline
+        $f(x) = \a^x$ & $y=0$ & Die Funktion nähert sich $0$ für $x \to -\infty$\\
+         $f(x) = \a^x + \d$ & $y=\d$ & Die Funktion nähert sich $\d$ für $x \to -\infty$\\
+         \hline
+         $f(x) = \a^x,\,\a < 1$ & $y=0$ & Die Funktion nähert sich $0$ für $x \to \infty$\\
+         $f(x) = -\a^x,\,\a < 1$ & $y=0$ & Die Funktion nähert sich $0$ für $x \to \infty$\\
+         \hline
+         $f(x) = [-]e^{-x}$ & $y=0$ & Die Funktion nähert sich $0$ für $x \to \infty$\\
+         $f(x) = e^x + \d$ & $y=\d$ & Die Funktion nähert sich $\d$ für $x \to -\infty$\\
+    \end{tabular}
+\end{center}
+}
+
+\boxx{e-Funktion}{
+\begin{center}
+    $e\approx2.718\dots$, Euler'sche Zahl
+\end{center}
+
+\boxxx{
+    \begin{minipage}{0.5\textwidth}
+        \vspace{-\baselineskip}
+        \begin{gather*}
+            f(x)=e^x\\
+            f'(x)=e^x\\
+            F(x)=e^x
+        \end{gather*}
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        \begin{center}
+            \begin{tabular}{c|c}
+                $f(x)$ & Ergebnis\\
+                \hline
+                $e^0$ & 1\\
+                $e^1$ & $e$\\
+                $e^{\ln(x)}$ & $x$\\
+            \end{tabular}
+        \end{center}
+    \end{minipage}
+}
+
+
+\begin{center}
+    $e^x$ wird niemals $=0$. $e^x$ steigt schneller als jede Potenzfunktion. $e^x$ dominiert jede Potenzfunktion
+\end{center}
+
+\begin{minipage}{0.5\textwidth}
+    \begin{center}
+        \dreid{x}{}{-2}{5}{-1}{8, domain=-2:5, ticks=none,legend pos=north east,}{
+            \addplot[crimson,thick,samples=100]{e^x};
+            \addlegendentry{$e^x$};
+            \addplot[jade,thick,domain=-2:5,samples=100]{x^2};
+            \addlegendentry{$x^2$};
+            \addplot[blaue,thick,samples=100]{2^x};
+            \addlegendentry{$2^x$};
+            \node at (axis cs:1.5,6) {\crimson{$e^x$}}
+            }
+    \end{center}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+    \boxxx{\begin{center}
+        \begin{align*}
+            e^{-x}&=\frac{1}{e^x}\\
+            e^{-1000}&=\frac{1}{e^{1000}}\\
+            \lim_{x\to-\infty}e^x&=0,\,e^x\neq0
+        \end{align*}
+    \end{center}}
+\end{minipage}
+
+\begin{align*}
+    f(x)&=e^x(x^2+1)\\
+    e^x&\neq0\,\land\,x^2+1=0
+\end{align*}
+}
+
+\boxx{Logarithmus}{
+\begin{center}
+    Der Logarithmus ist die Umkehrfunktion der Exponentialfunktion. Wie oft musst du die Basis $\a$ mit sich selbst multiplizieren, um $x$ zu erhalten?
+\end{center}
+\vspace{-\baselineskip}
+\begin{minipage}{0.5\textwidth}
+    \begin{align*}
+        2^x&=8\\
+        \log_2(8)&=x
+    \end{align*}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+    \begin{equation*}
+        a^y=x\quad\text{entspricht}\quad\log_a(x)=y
+    \end{equation*}
+\end{minipage}
+}
+
+\boxx{Natürlicher Logarithmus}{
+\begin{center}
+    Der natürliche Logarithmus $\ln(x)$ ist die Umkehrfunktion der Exponentialfunktion $e^x$. Der natürliche Logarithmus ist der Logarithmus zur Basis $e$
+\end{center}
+\vspace{-\baselineskip}
+\begin{minipage}{0.5\textwidth}
+    \begin{align*}
+        \ln(e^x)&=x\\
+        e^{\ln(x)}&=x\\
+        \ln(1)&=0\\
+        \ln(e)&=1\\
+    \end{align*}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+    \begin{align*}
+        \ln(x)&=y\quad\text{genau dann, wenn}\quad e^y=x\\
+        f(x)&=\ln(x),\quad f'(x)=\frac{1}{x}
+    \end{align*}
+\end{minipage}
+
+\boxxline
+
+\begin{center}
+    \begin{tabular}{c|c}
+        \crimson{Rechenregel} & \\
+        \hline
+        Produktregel & $\ln(x\cdot y)=\ln(x)+\ln(y)$\\
+        Quotientenregel & $\ln\left(\frac{x}{y}\right)=\ln(x)-\ln(y)$\\
+        Potenzregel & $\ln(x^y)=y\cdot\ln(x)$\\
+    \end{tabular}
+\end{center}
+}
+
+\boxx{Anwendung von Exponentialfunktionen}{
+\begin{itemize}
+    \item Exponentielles Wachstum: $f(t)=f(0)\cdot e^{k\cdot t}$
+    \item Halbwertszeit: $T_H=\dfrac{1}{k}\cdot\ln\left(\dfrac{1}{2}\right)=-\dfrac{1}{k}\cdot\ln(2)$
+    \item Verdopplungszeit: \begin{align*}
+        f(T_v)=f(0)\cdot2&=f(0)\cdot e^{kT_v}\\
+        e^{kT_v}&=2\quad T_v=\dfrac{1}{k}\cdot\ln(2)
+    \end{align*}
+\end{itemize}
+}
+
+\pagebreak
+
+\subsection{Integrale}
+
+\boxx{Stammfunktion}{
+\begin{align*}
+    \int f(x)\,dx&=F(x)+C\\
+    F(x)&=\a\cdot\dfrac{1}{n+1}\cdot x^{n+1}+C
+\end{align*}
+\begin{equation*}
+    F(x)\leftarrow f(x)\rightarrow f'(x)
+\end{equation*}
+\begin{center}
+    "Aufleiten" wird ungerne gehört. Stattdessen: "Stammfunktion bilden" oder "Integrieren"
+\end{center}
+}
+
+\boxx{Flächenberechnung}{
+\begin{center}
+     Die Fläche unter einer Funktion $f(x)$ über einem Intervall $[a,b]$ wird berechnet durch:
+\end{center}
+\vspace{-\baselineskip}
+\begin{align*}
+    \int_{a}^{b}f(x)\,dx&=\left[F(x)\right]_{a}^{b}\\
+    &=F(b)-F(a)
+\end{align*}
+\begin{center}
+     Die Fläche zwischen zwei Funktionen $f(x)$ und $g(x)$ über einem Intervall $[a,b]$ wird berechnet durch:
+\end{center}
+\begin{align*}
+    \int_{a}^{b}(f(x)-g(x))\,dx&=\left[F(x)-G(x)\right]_{a}^{b}=\left[F(b)-F(a)\right]-\left[G(b)-G(a)\right]\\
+    \int_{a}^{b}(f(x)-g(x))\,dx&=\int_{a}^{b}f(x)\,dx-\int_{a}^{b}g(x)\,dx
+\end{align*}
+}
+
+\boxx{Fallunterscheidung}{
+\begin{center}
+    Fläche unter einer Funktion $f(x)$:
+\end{center}
+\begin{center}
+    \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
+        Situation & Formel & \\
+        \hline
+        $f(x)\geq0$ auf $[a;b]$ & $A=\int_{a}^{b}f(x)\,dx$ & Keine Betragstriche nötig, da $f(x)\geq0$\\
+        \hline
+        $f(x)\leq0$ auf $[a;b]$ & $A=\vert\int_{a}^{b}f(x)\,dx\vert$ & Betragstriche nötig, da $f(x)\leq0$\\
+        \hline
+        $f(x)$ wechselt Vorzeichen & $A=\int_{a}^{b}f(x)\,dx+\vert\int_{b}^{c}f(x)\vert$ & Die Grenzen sind die Nullstellen von $f(x)$\\
+    \end{tabularx}
+\end{center}
+
+\boxxline
+
+\begin{center}
+    Fläche zwischen zwei Funktionen $f(x)$ und $g(x)$:
+\end{center}
+\begin{center}
+    \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
+        Situation & Formel & \\
+        \hline
+        $f(x)\geq g(x)$ auf $[a;b]$ & $ A=\vert\int_{a}^{b}(f(x)-g(x))\,dx\vert$ & $f(x)$ und $g(x)$ schneiden sich nicht\\
+        \hline
+        $f(x)$ und $g(x)$ schneiden sich & $A=\vert\int_{a}^{b}(f(x)-g(x))\,dx\vert+\vert\int_{b}^{c}(f(x)-g(x))\,dx\vert$ & Die Grenzen sind die Schnittpunkte von $f(x)$ und $g(x)$.\\
+    \end{tabularx}
+\end{center}
+
+\boxxline
+
+\begin{center}
+    Symmetrische Flächen:
+\end{center}
+\begin{center}
+    \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X}
+        Situation & Formel & \\
+        \hline
+        Achsensymmetrisch & $A=2\cdot\int_{0}^{a}f(x)\,dx$ & $f(x)$ ist Achsensymmetrisch\\
+        \hline
+        Punktsymmetrisch & $A=2\cdot\int_{0}^{a}\vert f(x)\vert\,dx$ & $f(x)$ ist Punktsymmetrisch\\
+    \end{tabularx}
+\end{center}
+}
+
+\boxx{Rechenregeln}{
+\begin{center}
+    \begin{tabular}{c|c}
+        \crimson{Regel} & \jade{Funktion} $f(x)$\\
+        \hline
+        Faktorregel & $\int c\cdot f(x)\,dx=c\cdot\int f(x)\,dx$\\
+        Summenregel & $\int\left(f(x)+g(x)\right)\,dx=\int f(x)\,dx+\int g(x)\,dx$\\
+        Differenzregel & $\int\left(f(x)-g(x)\right)\,dx=\int f(x)\,dx-\int g(x)\,dx$\\
+    \end{tabular}
+\end{center}
+}
+
+\boxx{Uneigentliche Integrale}{
+\begin{center}
+    Uneigentliche Integrale berechnen unendliche Flächen mit endlichem Flächeninhalt
+\end{center}
+
+\boxxline
+
+\begin{center}
+    Nach links unendlich:
+\end{center}
+\begin{equation*}
+    \int_{-\infty}^{b}f(x)\,dx=\int_{z}^{b}f(x)\,dx=\lim_{z\to-\infty}\int_{z}^{b}f(x)\,dx
+\end{equation*}
+
+\boxxline
+
+\begin{center}
+    Nach rechts unendlich:
+\end{center}
+\begin{equation*}
+    \int_{a}^{\infty}f(x)\,dx=\int_{a}^{z}f(x)\,dx=\lim_{z\to\infty}\int_{a}^{z}f(x)\,dx
+\end{equation*}
+
+\boxxline
+
+\begin{center}
+    In beide Richtungen unendlich:
+\end{center}
+\begin{equation*}
+    \int_{-\infty}^{\infty}f(x)\,dx=\lim_{a\to-\infty}\int_{a}^{0}f(x)\,dx+\lim_{z\to\infty}\int_{0}^{z}f(x)\,dx
+\end{equation*}
+}
+
+\boxx{Produktintegration}{
+\begin{equation*}
+    \int f(x) \cdot g(x) \, dx = F(x) \cdot g(x) - \int F(x) \cdot g'(x) \, dx
+\end{equation*}
+\noindent\rule{\textwidth}{0.4pt}
+\begin{center}
+    \jade{Vorgehen}
+\end{center}
+\begin{center}
+    Wähle \( f(x) \) und \( g(x) \) so, dass einer der Faktoren einfacher integrierbar (für \( F(x) \)) oder ableitbar (für \( g'(x) \)) ist.
+\end{center}
+\begin{center}
+    Setze \( f(x) \), \( F(x) \), \( g(x) \), und \( g'(x) \) in die Formel ein.
+\end{center}
+}
+
+\boxx{Rotationskörper}{
+\begin{center}
+    Ein Rotationskörper entsteht, wenn eine Funktion um die $x$-Achse rotiert wird. Der Rotationskörper hat ein Volumen $V$.
+\end{center}
+\vspace{-\baselineskip}
+\begin{align*}
+    V&=\pi\int_{b}^{a}(f(x))^2\,dx\\
+    &=\pi\left[F(x)\right]_{a}^{b}=\pi\left[F(b)-F(a)\right]
+\end{align*}
+\begin{center}
+    \dreid{x}{y}{-1}{9}{-3}{3, domain=0:3, xtick={-2,-1,1,2,3,4,5,6,7,8}, ytick={-2,-1,1,2}, legend pos=outer north east,} {
+            \addplot[name path=one, jade, thick,domain=0:8]{sqrt(x)};
+            \addplot[name path=two, jade, thick,domain=0:8]{-sqrt(x)};
+            \addplot[name path=five,domain=0.5:8]{0};
+            \addplot[fill=blue!50, opacity=0.5] fill between[of=one and two, soft clip={domain=0:8}];
+        }
+\end{center}
+}
+
+\subsection{Analysis Aufgaben}
+
+\boxx{Steckbriefaufgaben}{
+\begin{itemize}
+    \item ganzrationale Funktionen bestimmten
+    \item Grad \& Eigenschaften festlegen
+    \item LGS bilden \& lösen
+    \item Werte in $f(x)$ einsetzen
+\end{itemize}
+}
+
+\boxx{Extremwertproblem mit Nebenbedingung}{
+\begin{itemize}
+    \item Extremabedingung (Hauptbedingung): $A=a\cdot b$
+    \item Nebendingung: Variablen einsetzen: $2a+b=50$
+    \item Zielfunktion: \vspace{-\baselineskip}\begin{align*}
+        b&=50-2a\\
+        A&=a\cdot(50-2a)\\
+    \end{align*}
+    \vspace{-3\baselineskip}
+    \item je nach Aufgabe Maximum/Minimum bestimmen
+\end{itemize}
+}
+
+\subsection{Lineare Gleichungssysteme}
+
+\boxx{Form}{
+    \begin{equation*}
+        \begin{matrix} \text{\rom{1}} \\ \text{\rom{2}} \\ \text{\rom{3}} \\ \end{matrix}\Bigg|\begin{matrix}a-b=4\\2a+b=5\\5a-2b=0\\\end{matrix}\Bigg|
+    \end{equation*}
+}
+
+\boxx{Gauss-Verfahren}{
+    \begin{equation*}
+        1.\qquad\begin{matrix} \text{\rom{1}} \\ \text{\rom{2}} \\ \text{\rom{3}} \\ \end{matrix}\Bigg|\begin{matrix} 2x &+&3y&+&z&=&1 \\ 4x&-&y&+&3z&=&11 \\ 3x&+&y&-&z&=&0 \\ \end{matrix}\Bigg|=\begin{pmatrix}
+            2 & 3 & 1 & \big| & 1 \\
+            \jade{4} & -1 & 3 & \big| & 11 \\
+            \jade{3} & 1 & -1 & \big| & 0 \\
+          \end{pmatrix}          
+    \end{equation*}
+    
+    \boxxline
+
+    \begin{equation*}
+        2.\begin{pmatrix}
+            2 & 3 & 1 & \big| & 1 \\
+            \jade{4} & -1 & 3 & \big| & 11 \\
+            \jade{3} & 1 & -1 & \big| & 0 \\
+          \end{pmatrix}\xrightarrow{\text{\rom{2}}-2\cdot\text{\rom{1}}}
+          \begin{pmatrix}
+            2 & 3 & 1 & \big| & 1 \\
+            \jade{0} & -7 & 1 & \big| & 9 \\
+            3 & 1 & -1 & \big| & 0 \\
+          \end{pmatrix}
+    \end{equation*}
+
+    \boxxline
+
+    \begin{equation*}
+        3.\begin{pmatrix}
+            2 & 3 & 1 & \big| & 1 \\
+            0 & -7 & 1 & \big| & 9 \\
+            3 & 1 & -1 & \big| & 0 \\
+          \end{pmatrix}\xrightarrow{\text{\rom{3}}-\frac{3}{2}\cdot\text{\rom{1}}}
+          \begin{pmatrix}
+            2 & 3 & 1 & \big| & 1 \\
+            \jade{0} & -7 & 1 & \big| & 9 \\
+            \jade{0} & -\crimson{\frac{7}{2}} & -\frac{5}{2} & \big| & -\frac{3}{2} \\
+          \end{pmatrix}
+    \end{equation*}
+
+    \boxxline
+
+    \begin{equation*}
+        4.\begin{pmatrix}
+            2 & 3 & 1 & \big| & 1 \\
+            0 & -7 & 1 & \big| & 9 \\
+            0 & -\crimson{\frac{7}{2}} & -\frac{5}{2} & \big| & -\frac{3}{2} \\
+          \end{pmatrix}\xrightarrow{\text{\rom{3}}-\frac{1}{2}\cdot\text{\rom{2}}}
+          \begin{pmatrix}
+            2 & 3 & 1 & \big| & 1 \\
+            \jade{0} & -7 & 1 & \big| & 9 \\
+            \jade{0} & \jade{0} & -3 & \big| & -6 \\
+          \end{pmatrix}
+    \end{equation*}
+
+    \boxxline
+
+    \begin{equation*}
+        5.\qquad\begin{matrix} \text{\rom{1}} \\ \text{\rom{2}} \\ \text{\rom{3}} \\ \end{matrix}\Bigg|\begin{matrix} 2x & + & 3y & + & z & = & 1 \\ & - & 7y & + & z & = & 9 \\ &  &  & - & 3z & = & -6 \\ \end{matrix}\Bigg|
+    \end{equation*}
+}
